@@ -39,14 +39,16 @@ const createHourlySection = function (currentHour, hourlyWeather) {
   const hourlySection = document.createElement("div");
   hourlySection.className = "today-hourly-section";
 
-  const upperBoundHour = Math.min(currentHour + 7, 24);
+  const upperBoundHour = currentHour + 7;
   const hourlyWeatherPart = hourlyWeather.slice(currentHour, upperBoundHour);
 
   hourlyWeatherPart.forEach((weather) => {
     const hourWeatherElement = document.createElement("div");
     hourWeatherElement.className = "hour-weather";
     const hourWeatherInnerHtml = `
-      <div class="hour-number">${weather.hour}</div>
+      <div class="hour-number">${weather.hour < 10 ? "0" : ""}${
+      weather.hour
+    }</div>
         <img src="http:${weather.icon}" alt="${weather.icon}" srcset="" />
       <p class="hour-temperature">${weather.temperature}°</p>
     `;
