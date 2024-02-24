@@ -96,7 +96,7 @@ const createHourlySection = function (currentHour, hourlyWeather) {
       <div class="hour-number">${weather.hour < 10 ? "0" : ""}${
       weather.hour
     }</div>
-        <img src="http:${weather.icon}" alt="${weather.icon}" srcset="" />
+        <img src="${weather.icon}" alt="${weather.condition}" srcset="" />
       <p class="hour-temperature">${weather.temperature}°</p>
     `;
     hourWeatherElement.insertAdjacentHTML("afterbegin", hourWeatherInnerHtml);
