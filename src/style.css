@@ -1,5 +1,13 @@
 :root {
   font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .weather-widget {
@@ -79,7 +87,9 @@
 }
 
 .highest-temp-days {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
+  margin-top: 0.7rem;
+  margin-bottom: -0.5rem;
 }
 
 .lowest-temp-days {
@@ -95,15 +105,22 @@
 }
 
 #get-city-btn {
-  width: 2rem;
-  height: 2rem;
-}
-#get-city-btn {
   width: 3rem;
-  height: 3rem;
+  height: 2.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 1rem;
+
+  border-radius: 0 1rem 1rem 0;
+  border: none;
+}
+#get-city-btn:hover {
+  opacity: 0.9;
+}
+
+#get-city-btn:active {
+  opacity: 0.8;
 }
 
 #get-city-btn svg {
@@ -112,4 +129,40 @@
 
 .search-form label {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form #city-input {
+  height: 2.4rem;
+  margin-left: 1rem;
+  border-radius: 1rem 0 0 1rem;
+  border: none;
+  padding-left: 1rem;
+}
+
+.search-form #city-input:focus {
+  outline: 1px solid black;
+}
+
+.loader {
+  border: 0.3rem solid #f3f3f3; /* Light grey */
+  border-top: 0.3rem solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  opacity: 0;
 }

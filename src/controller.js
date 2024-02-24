@@ -15,7 +15,7 @@ const drawWeather = async function (city) {
       `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3`
     );
     const data = await response.json();
-    console.log(data);
+
     const forecast = [
       ...data.forecast.forecastday[0].hour,
       ...data.forecast.forecastday[1].hour,
