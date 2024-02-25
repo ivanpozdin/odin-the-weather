@@ -108,14 +108,13 @@ const createHourlySection = function (currentHour, hourlyWeather) {
 const createDaysSection = function (daysWeather) {
   const daysContainer = document.createElement("div");
   daysContainer.className = "days-section";
+
   daysWeather.forEach((weather) => {
     const dayHtml = `
       <div class="day-weather">
         <p class="week-day-name">${weather.weekDay}</p>
-        <p class="highest-temp-days">${weather.highestTemperature}°</p>
         <img src="${weather.icon}" alt="${weather.condition}">
-        <p class="lowest-temp-days">${weather.lowestTemperature}°</p>
-        
+        <p>H: <span>${weather.highestTemperature}°</span> L: <span>${weather.lowestTemperature}°</span></p>
       </div>
     `;
     daysContainer.insertAdjacentHTML("beforeend", dayHtml);
